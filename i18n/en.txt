@@ -1,0 +1,26 @@
+locale|en
+GRAVITYTOOLS_MOD_DESCRIPTION|Currently adds the Gravity Beacon drone that can create localized gravity wells to attract or repel objects in certain radius.
+GRAVITYTOOLS_BRIEF|Gravity manipulation stuff
+SYSTEM_GRAVITY_BEACON|Gravity Beacon
+SYSTEM_GRAVITY_BEACON_DESC|The Gravity Beacon Drone employs a high-energy mass-effect field generator to artificially manipulate local gravity. It effectively creates a localized gravity well (attraction) or a repulsive shear (repulsion) within a 200 meter radius.\n\nPrimary use cases include debris clearing and mineral gathering.\n\nNote: Operations are limited to 60 seconds per cycle.
+SYSTEM_GRAVITY_BEACON_SPEC|Dry Mass: 8,000 kg\nPropellant: 8,000 kg\nAutonomy Class: C1\nCradle Mass: 500 kg\nField Radius: 200m\nMax Field Strength: 5.2G (Propagative)\nField Duration: 60s \nManufacturer: Triskelion-Armstrong
+SYSTEM_GRAVITY_BEACON_MANUAL|Deploy the drone to a target location. Use the comms interface to switch between Attraction and Repulsion modes. The drone will automatically station-keep while active. Use the 'Return' command to recover the unit. WARNING: Do not operate near fragile structures.
+DIALOG_GRAVITY_READY_1|Gravity manipulation matrix initialized. Standing by.
+DIALOG_GRAVITY_READY_2|Drone online. Mass-effect fields stable.
+DIALOG_GRAVITY_READY_3|Ready to distort local spacetime on your mark.
+DIALOG_GRAVITY_GREETING_1|Systems nominal. Awaiting command.
+DIALOG_GRAVITY_GREETING_2|Standing by for instructions.
+DIALOG_GRAVITY_GREETING_3|What are your orders?
+DIALOG_GRAVITY_ORDER_ATTRACT|Activate Attraction Field
+DIALOG_GRAVITY_ORDER_REPEL|Activate Repulsion Field
+DIALOG_GRAVITY_CLOSE|Close Channel
+DIALOG_GRAVITY_ORDER_OFF|Deactivate Field
+DIALOG_GRAVITY_ORDER_RETURN|Return to cradle
+DIALOG_GRAVITY_RESPONSE_OK_1|Compliance. Emitters engaged.
+DIALOG_GRAVITY_RESPONSE_OK_2|Affirmative. Field active.
+DIALOG_GRAVITY_RESPONSE_OK_3|Executing. Gravity well established.
+DIALOG_GRAVITY_RESPONSE_OFF_1|Field deactivated.
+DIALOG_GRAVITY_RESPONSE_OFF_2|Emitters spinning down.
+DIALOG_GRAVITY_TIMEOUT|Energy capacitors depleted. Gravity field offline. Recharging.
+DIALOG_GRAVITY_RESPONSE_RETURN_1|Affirmative. Returning to cradle.
+DIALOG_GRAVITY_RESPONSE_RETURN_2|Compliance. Engines engaged. Returning.

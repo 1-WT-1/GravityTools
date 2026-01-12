@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://comms/ConversationPlayer.gd" type="Script" id=1]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_ORDER.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_ORDER_RETURN_NODE.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_ORDER_OFF_NODE.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_CLOSE.tscn" type="PackedScene" id=3]
+
+[node name="DIALOG_GRAVITY_READY_1" type="Node"]
+script = ExtResource( 1 )
+myLine = false
+
+[node name="DIALOG_GRAVITY_ORDER_ATTRACT" parent="." instance=ExtResource( 2 )]
+shipConfigurationKey = "gravity_mode"
+shipConfigurationSet = "attract"
+
+[node name="DIALOG_GRAVITY_ORDER_REPEL" parent="." instance=ExtResource( 2 )]
+shipConfigurationKey = "gravity_mode"
+shipConfigurationSet = "repel"
+
+[node name="DIALOG_GRAVITY_ORDER_OFF" parent="." instance=ExtResource( 5 )]
+shipConfigurationKey = "gravity_mode"
+shipConfigurationSet = "off"
+
+[node name="DIALOG_GRAVITY_ORDER_RETURN" parent="." instance=ExtResource( 4 )]
+aiImperative = 9
+
+[node name="DIALOG_GRAVITY_CLOSE" parent="." instance=ExtResource( 3 )]

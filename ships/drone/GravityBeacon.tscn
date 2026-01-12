@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ships/drone/ClaimBeacon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GravityTools/ships/drone/GravityBeacon.gd" type="Script" id=2]
+[ext_resource path="res://GravityTools/comms/conversation/GravityBeaconConversation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enceladus/Spotlight.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 2100.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 500.0
+
+[node name="GravityBeacon" instance=ExtResource( 1 )]
+collision_layer = 4126
+script = ExtResource( 2 )
+aiCuriosityDisance = 2000.0
+dialogTree = NodePath("GravityBeaconConversation")
+max_duration = 60.0
+
+[node name="GravityBeaconConversation" parent="." index="13" instance=ExtResource( 3 )]
+
+[node name="Spotlight" parent="." index="14" instance=ExtResource( 5 )]
+enabled = false
+texture_scale = 12.0
+color = Color( 0.5, 0, 1, 1 )
+energy = 6.0
+range_height = 20.0
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+
+[node name="Repellant" type="Area2D" parent="." index="15"]
+collision_layer = 0
+collision_mask = 17
+monitorable = false
+priority = 3.0
+gravity_point = true
+gravity_distance_scale = 0.001
+gravity_vec = Vector2( 0, 0 )
+gravity = -512.0
+linear_damp = 2.0
+angular_damp = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Repellant" index="0"]
+light_mask = 0
+z_index = -2
+shape = SubResource( 1 )
+
+[node name="Attractor" type="Area2D" parent="." index="16"]
+collision_layer = 0
+collision_mask = 17
+monitorable = false
+gravity_point = true
+gravity_distance_scale = 0.001
+gravity_vec = Vector2( 0, 0 )
+gravity = 512.0
+linear_damp = 0.3
+angular_damp = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attractor" index="0"]
+light_mask = 0
+z_index = -2
+shape = SubResource( 1 )
+
+[node name="SafetyBuffer" type="Area2D" parent="." index="17"]
+collision_layer = 0
+collision_mask = 17
+monitorable = false
+priority = 10.0
+gravity_point = true
+gravity_distance_scale = 0.001
+gravity_vec = Vector2( 0, 0 )
+gravity = -10.0
+linear_damp = 0.4
+angular_damp = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafetyBuffer" index="0"]
+light_mask = 0
+z_index = -1
+shape = SubResource( 2 )
+
+[editable path="AI"]
+[editable path="reactor"]
