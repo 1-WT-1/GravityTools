@@ -13,7 +13,7 @@ credits=["Lurkily - for idea in discord's megathread"]
 
 version_major=0
 version_minor=1
-version_bugfix=0
+version_bugfix=1
 
 [tags]
 
@@ -31,7 +31,7 @@ uk_UA="0%"
 [links]
 
 HEVLIB_GITHUB={"URL":"https://github.com/1-WT-1/GravityTools"}
-HEVLIB_DISCORD={"URL":""}
+HEVLIB_DISCORD={"URL":"https://discord.com/channels/426287934870781952/1460357612058185781"}
 
 [manifest_definitions]
 manifest_version=2.2
