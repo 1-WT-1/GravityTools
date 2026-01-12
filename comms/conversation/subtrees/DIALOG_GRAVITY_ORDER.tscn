@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://comms/ConversationPlayer.gd" type="Script" id=1]
+
+[node name="DIALOG_GRAVITY_ORDER" type="Node"]
+script = ExtResource( 1 )
+myLine = false
+
+[node name="DIALOG_GRAVITY_RESPONSE_OK_1" type="Node" parent="."]
+script = ExtResource( 1 )
+myLine = true
+
+[node name="DIALOG_GRAVITY_RESPONSE_OK_2" type="Node" parent="."]
+script = ExtResource( 1 )
+myLine = true
+
+[node name="DIALOG_GRAVITY_RESPONSE_OK_3" type="Node" parent="."]
+script = ExtResource( 1 )
+myLine = true

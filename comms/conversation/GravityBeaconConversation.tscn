@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://comms/ConversationPlayer.gd" type="Script" id=1]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_READY_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_GREETING_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_READY_2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_READY_3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_GREETING_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_GREETING_3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GravityTools/comms/conversation/subtrees/DIALOG_GRAVITY_TIMEOUT.tscn" type="PackedScene" id=8]
+
+[node name="GravityBeaconConversation" type="Node"]
+script = ExtResource( 1 )
+resetLocation = true
+
+[node name="DIALOG_GRAVITY_READY_1" parent="." instance=ExtResource( 2 )]
+onlyOnce = true
+
+[node name="DIALOG_GRAVITY_READY_2" parent="." instance=ExtResource( 4 )]
+onlyOnce = true
+
+[node name="DIALOG_GRAVITY_READY_3" parent="." instance=ExtResource( 5 )]
+onlyOnce = true
+
+[node name="DIALOG_GRAVITY_TIMEOUT" parent="." instance=ExtResource( 8 )]
+shipConfigurationKey = "just_timed_out"
+shipConfigurationRequire = "true"
+
+[node name="DIALOG_GRAVITY_GREETING_1" parent="." instance=ExtResource( 3 )]
+shipConfigurationKey = "just_timed_out"
+shipConfigurationRequire = "false"
+
+[node name="DIALOG_GRAVITY_GREETING_2" parent="." instance=ExtResource( 6 )]
+shipConfigurationKey = "just_timed_out"
+shipConfigurationRequire = "false"
+
+[node name="DIALOG_GRAVITY_GREETING_3" parent="." instance=ExtResource( 7 )]
+shipConfigurationKey = "just_timed_out"
+shipConfigurationRequire = "false"
