@@ -6,7 +6,7 @@ const GravityBeaconDock_L = {
 	"description": "SYSTEM_GRAVITY_BEACON_DESC",
 	"specs": "SYSTEM_GRAVITY_BEACON_SPEC",
 	"manual": "SYSTEM_GRAVITY_BEACON_MANUAL",
-	"price": 150000,
+	"price": 799999,
 	"slot_type": "HARDPOINT",
 	"alignment": "ALIGNMENT_LEFT",
 	"equipment_type": "EQUIPMENT_BEACON",
@@ -23,7 +23,7 @@ const GravityBeaconDock_R = {
 	"description": "SYSTEM_GRAVITY_BEACON_DESC",
 	"specs": "SYSTEM_GRAVITY_BEACON_SPEC",
 	"manual": "SYSTEM_GRAVITY_BEACON_MANUAL",
-	"price": 150000,
+	"price": 799999,
 	"slot_type": "HARDPOINT",
 	"alignment": "ALIGNMENT_RIGHT",
 	"equipment_type": "EQUIPMENT_BEACON",
@@ -39,12 +39,12 @@ const GravityBeaconDock_R = {
 	}
 }
 
-const GravityHarpoon = {
-	"system": "SYSTEM_GRAVITY_HARPOON",
-	"description": "SYSTEM_GRAVITY_HARPOON_DESC",
-	"specs": "SYSTEM_GRAVITY_HARPOON_SPEC",
-	"manual": "SYSTEM_GRAVITY_HARPOON_MANUAL",
-	"price": 65000,
+const GravityGUN = {
+	"system": "SYSTEM_GRAVITY_GUN",
+	"description": "SYSTEM_GRAVITY_GUN_DESC",
+	"specs": "SYSTEM_GRAVITY_GUN_SPEC",
+	"manual": "SYSTEM_GRAVITY_GUN_MANUAL",
+	"price": 659999,
 	"slot_type": "HARDPOINT",
 	"equipment_type": "EQUIPMENT_MANIPULATION_ARMS",
 	"test_protocol": "fire",

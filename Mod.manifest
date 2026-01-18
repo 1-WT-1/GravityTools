@@ -17,7 +17,7 @@ version_bugfix=1
 
 [tags]
 
-TAG_ADDS_EQUIPMENT={"type":"array","value":["SYSTEM_GRAVITY_BEACON","SYSTEM_GRAVITY_HARPOON"]}
+TAG_ADDS_EQUIPMENT={"type":"array","value":["SYSTEM_GRAVITY_BEACON","SYSTEM_GRAVITY_GUN"]}
 TAG_ADDS_GAMEPLAY_MECHANICS={"type":"array","value":["Gravity manipulation drone for debris clearing and mineral gathering"]}
 TAG_ALLOW_ACHIEVEMENTS={"type":"bool","value":false}
 TAG_FUN={"type":"bool","value":true}

@@ -2,7 +2,7 @@ locale|en
 GRAVITYTOOLS_MOD_DESCRIPTION|Currently adds the Gravity Beacon drone that can create localized gravity wells to attract or repel objects in certain radius.
 GRAVITYTOOLS_BRIEF|Gravity manipulation stuff
 
-
+DRONE_GRAV|Gravity Beacon
 SYSTEM_GRAVITY_BEACON|Gravity Beacon
 SYSTEM_GRAVITY_BEACON_DESC|The Gravity Beacon Drone employs a high-energy mass-effect field generator to artificially manipulate local gravity. It effectively creates a localized gravity well (attraction) or a repulsive shear (repulsion) within a 200 meter radius.\n\nPrimary use cases include debris clearing and mineral gathering.\n\nNote: Operations are limited to 60 seconds per cycle.
 SYSTEM_GRAVITY_BEACON_SPEC|Dry Mass: 8,000 kg\nPropellant: 8,000 kg\nAutonomy Class: C1\nCradle Mass: 500 kg\nField Radius: 200m\nMax Field Strength: 5.2G (Propagative)\nField Duration: 60s \nManufacturer: Triskelion-Armstrong
@@ -29,10 +29,10 @@ DIALOG_GRAVITY_RESPONSE_RETURN_1|Affirmative. Returning to cradle.
 DIALOG_GRAVITY_RESPONSE_RETURN_2|Compliance. Engines engaged. Returning.
 
 
-SYSTEM_GRAVITY_HARPOON|Gravity Gun
-SYSTEM_GRAVITY_HARPOON_DESC|A high-stress directional gravity emitter. Creates a powerful attractive field cone to pull objects towards the ship.\n\nWARNING: Extremely high energy consumption. Use with caution.
-SYSTEM_GRAVITY_HARPOON_SPEC|Class: High-stress Hardpoint\nForce: 1G Point\nEnergy Draw: 500MW\nField Length: 75m
-SYSTEM_GRAVITY_HARPOON_MANUAL|Hold trigger to activate the directional gravity field. Objects within the cone will be pulled towards the emitter. Ensure sufficient power generation before sustained use.
+SYSTEM_GRAVITY_GUN|Gravity Gun
+SYSTEM_GRAVITY_GUN_DESC|A high-stress directional gravity emitter. Creates a powerful attractive field cone to pull objects towards the ship.\n\nWARNING: High energy consumption. Use with caution.
+SYSTEM_GRAVITY_GUN_SPEC|Force: 1G Point\nEnergy Draw: 500MW\nField Length: 95m\n Mass: 26,000 kg\nManufacturer: Unknown
+SYSTEM_GRAVITY_GUN_MANUAL|Hold trigger to activate the directional gravity field. Objects within the cone will be pulled towards the emitter. Ensure sufficient power generation before sustained use.
 
 DAMAGE_GRAVGUN_WEAR|Wear
 DAMAGE_GRAVGUN_WEAR_TOOLTIP|Wear occurs naturally when sustaining the gravity field.\nWorn coils have reduced field strength.

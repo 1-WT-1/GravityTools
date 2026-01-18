@@ -1,9 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://GravityTools/weapons/GravityGun.gd" type="Script" id=1]
 [ext_resource path="res://weapons/weapons-c.png" type="Texture" id=2]
 [ext_resource path="res://weapons/weapons-n.png" type="Texture" id=3]
-[ext_resource path="res://weapons/laser.wav" type="AudioStream" id=4]
+[ext_resource path="res://GravityTools/weapons/Weapon_GravGun_Loop.oggstr" type="AudioStream" id=4]
+[ext_resource path="res://shader/ao-spec-difuse.shader" type="Shader" id=5]
+[ext_resource path="res://lights/distant-proxy.png" type="Texture" id=6]
+[ext_resource path="res://weapons/weapons.material" type="Material" id=7]
+
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 120.0
@@ -35,18 +41,18 @@ void fragment() {
 	
 	// Normalize X for edge fade (beam width varies along length)
 	// Approximate beam width at this Y position
-	float beam_half_width = 20.0 + abs(v_pos.y) * 0.033; // Widens from 20 to ~40
+	float beam_half_width = 20.0 + abs(v_pos.y) * 0.08; // Widens from 20 to 100 over 1000px
 	float norm_x = v_pos.x / beam_half_width;
 	
 	// Soft edge fade - gaussian-like falloff
-	float edge_fade = exp(-norm_x * norm_x * 2.0);
+	float edge_fade = exp(-norm_x * norm_x * 4.0);
 	edge_fade = clamp(edge_fade, 0.0, 1.0);
 	
 	// Tip fade - fade out at the far end
-	float tip_fade = smoothstep(-650.0, -400.0, v_pos.y);
+	float tip_fade = smoothstep(-1050.0, -800.0, v_pos.y);
 	
 	// Base fade - fade in from gun
-	float base_fade = smoothstep(0.0, -80.0, v_pos.y);
+	float base_fade = smoothstep(50.0, -100.0, v_pos.y);
 	
 	// Add turbulence distortion to ring distance
 	float turb_offset = sin(v_pos.x * 0.05 + time * 2.0) * turbulence * 20.0;
@@ -92,18 +98,104 @@ shader_param/ring_frequency = 4.0
 shader_param/ring_thickness = 1.0
 shader_param/turbulence = 0.41
 
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 5 )
+shader_param/maskScale = Vector2( 11, 1 )
+shader_param/frames = Vector2( 1, 1 )
+shader_param/paintJobFactor = 0.0
+shader_param/paintJobBrightAdjust = 16.0
+shader_param/maxval = 5.0
+shader_param/sparkBias = 0.0
+shader_param/scale = Vector2( 0.5, 1 )
+shader_param/sparkColor = Vector3( 50, 10, 100 )
+shader_param/coatColor = Plane( 0.02, 0.02, 0.02, 1 )
+shader_param/sparkSpeed = Plane( 0.011, 0.013, 0.017, 0.019 )
+shader_param/ref = 0.4
+shader_param/roughness = 4.0
+shader_param/reflectiveness = 8.0
+shader_param/shine = 1.0
+
 [node name="GravityGun" type="Node2D"]
 script = ExtResource( 1 )
-powerDraw = 500000.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Base" type="Sprite" parent="."]
+material = ExtResource( 7 )
 position = Vector2( 0, -3 )
+z_index = 3
 texture = ExtResource( 2 )
 normal_map = ExtResource( 3 )
 centered = false
 offset = Vector2( -39, 0 )
 region_enabled = true
 region_rect = Rect2( 985, 108, 78, 300 )
+
+[node name="Thingy" type="Sprite" parent="."]
+material = ExtResource( 7 )
+position = Vector2( 0, 150 )
+rotation = 3.14159
+z_index = 4
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+centered = false
+offset = Vector2( -27, 0 )
+region_enabled = true
+region_rect = Rect2( 741.578, 258.248, 53, 145.027 )
+
+[node name="Thingy2" type="Sprite" parent="."]
+material = ExtResource( 7 )
+position = Vector2( 0, 225 )
+rotation = 3.14159
+z_index = 4
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+centered = false
+offset = Vector2( -27, 0 )
+region_enabled = true
+region_rect = Rect2( 741.578, 258.248, 53, 96.192 )
+
+[node name="Thingy3" type="Sprite" parent="."]
+material = ExtResource( 7 )
+position = Vector2( 0, 265 )
+rotation = 3.14159
+z_index = 4
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+centered = false
+offset = Vector2( -27, 0 )
+region_enabled = true
+region_rect = Rect2( 741.578, 258.248, 53, 96.192 )
+
+[node name="Coil1" type="Sprite" parent="."]
+material = ExtResource( 7 )
+position = Vector2( 0, 250 )
+z_index = 1
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 592, 295.604, 95, 87.506 )
+
+[node name="heat" type="Sprite" parent="Coil1"]
+material = SubResource( 5 )
+z_index = 1
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 336, 295.604, 95, 87.506 )
+
+[node name="Coil2" type="Sprite" parent="."]
+material = ExtResource( 7 )
+position = Vector2( 0, 172 )
+z_index = 1
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 592, 295.604, 95, 87.506 )
+
+[node name="heat" type="Sprite" parent="Coil2"]
+material = SubResource( 5 )
+z_index = 1
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 336, 295.604, 95, 87.506 )
 
 [node name="GravityField" type="Area2D" parent="."]
 collision_layer = 0
@@ -119,11 +211,25 @@ shape = SubResource( 1 )
 
 [node name="BeamVisual" type="Polygon2D" parent="."]
 material = SubResource( 3 )
-position = Vector2( 5.84392, -45.681 )
-scale = Vector2( 2.59083, 1.28432 )
-polygon = PoolVector2Array( -49.7307, -27.5, 44.4475, -28.2787, 44.4475, -758.624, -49.3447, -760.181 )
+position = Vector2( 0, -25 )
+polygon = PoolVector2Array( -50, 10, 50, 10, 100, -1000, -100, -1000 )
 
 [node name="AudioFire" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -5.0
+volume_db = 5.0
 bus = "SFX"
+
+[node name="Light2D" type="Light2D" parent="."]
+material = SubResource( 4 )
+editor_only = true
+texture = ExtResource( 6 )
+energy = 5.0
+range_height = 50.0
+
+[node name="Light2D" type="Light2D" parent="Light2D"]
+material = SubResource( 4 )
+position = Vector2( 0, 200 )
+editor_only = true
+texture = ExtResource( 6 )
+energy = 5.0
+range_height = 50.0
