@@ -38,3 +38,18 @@ const GravityBeaconDock_R = {
 		]
 	}
 }
+
+const GravityHarpoon = {
+	"system": "SYSTEM_GRAVITY_HARPOON",
+	"description": "SYSTEM_GRAVITY_HARPOON_DESC",
+	"specs": "SYSTEM_GRAVITY_HARPOON_SPEC",
+	"manual": "SYSTEM_GRAVITY_HARPOON_MANUAL",
+	"price": 65000,
+	"slot_type": "HARDPOINT",
+	"equipment_type": "EQUIPMENT_MANIPULATION_ARMS",
+	"test_protocol": "fire",
+	"weapon_slot": {
+		"path": "res://GravityTools/weapons/GravityGun.tscn",
+		"data": []
+	}
+}
