@@ -6,8 +6,8 @@ const MOD_PRIORITY = 0
 # Name of the mod, used for writing to the logs
 const MOD_NAME = "Gravity Tools"
 const MOD_VERSION_MAJOR = 0
-const MOD_VERSION_MINOR = 1
-const MOD_VERSION_BUGFIX = 1
+const MOD_VERSION_MINOR = 2
+const MOD_VERSION_BUGFIX = 0
 const MOD_VERSION_METADATA = ""
 # Path of the mod folder, automatically generated on runtime
 var modPath:String = get_script().resource_path.get_base_dir() + "/"

@@ -1,6 +1,6 @@
 locale|en
-GRAVITYTOOLS_MOD_DESCRIPTION|Currently adds the Gravity Beacon drone that can create localized gravity wells to attract or repel objects in certain radius.
-GRAVITYTOOLS_BRIEF|Gravity manipulation stuff
+GRAVITYTOOLS_MOD_DESCRIPTION|Adds gravity manipulation equipment: the Gravity Beacon drone for creating localized gravity wells, and the Gravity Gun for pulling objects towards your ship.
+GRAVITYTOOLS_BRIEF|Gravity manipulation equipment
 
 DRONE_GRAV|Gravity Beacon
 SYSTEM_GRAVITY_BEACON|Gravity Beacon

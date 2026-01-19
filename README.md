@@ -1,6 +1,14 @@
 # Gravity Tools
 
-Currently adds the Gravity Beacon drone that can create localized gravity wells to attract or repel objects in certain radius.
+A mod adding gravity manipulation equipment for Delta-V.
+
+## Features
+
+### Gravity Beacon Drone
+A deployable drone that creates localized gravity wells to attract or repel objects within its radius.
+
+### Gravity Gun
+A high-stress mounted "weapon" that projects a directional gravity field. Pulls objects towards your ship within a cone.
 
 > [!WARNING]
 > Requires HevLib to function
