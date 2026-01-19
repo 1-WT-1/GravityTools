@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ships/modules/DockingArm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ships/modules/ClaimOwner.gd" type="Script" id=2]
@@ -74,6 +74,7 @@ shape = SubResource( 2 )
 
 [node name="GravityBeaconOwner" type="Node2D" parent="." index="5"]
 script = ExtResource( 2 )
+transponderFormat = "{ship}-GB{nr}"
 
 [node name="GravityBeacon" parent="GravityBeaconOwner" index="0" instance=ExtResource( 3 )]
 position = Vector2( 80, -40 )
