@@ -11,6 +11,14 @@ func _ready():
 	setConfig("just_timed_out", "false")
 	# Ensure fields are off by default
 	update_fields()
+	attract_area.connect("body_entered", self, "_on_body_entered")
+	repel_area.connect("body_entered", self, "_on_body_entered")
+	safety_area.connect("body_entered", self, "_on_body_entered")
+
+func _on_body_entered(body):
+	if gravity_mode != "off":
+		if body is RigidBody2D and body.sleeping:
+			body.sleeping = false
 
 export var max_duration = 60.0
 var active_timer = 0.0

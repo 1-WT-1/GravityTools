@@ -134,6 +134,12 @@ func _ready():
 	baseGravity = field.gravity
 	beam_mat.set_shader_param("intensity", 0.0)
 	field.space_override = Area2D.SPACE_OVERRIDE_DISABLED
+	field.connect("body_entered", self, "_on_body_entered")
+
+func _on_body_entered(body):
+	if field.space_override != Area2D.SPACE_OVERRIDE_DISABLED:
+		if body is RigidBody2D and body.sleeping:
+			body.sleeping = false
 
 func getPowerDraw():
 	return powerDraw / 1000.0 # Return in MW
@@ -173,7 +179,7 @@ func _physics_process(delta):
 			
 			# Active
 			field.space_override = Area2D.SPACE_OVERRIDE_REPLACE
-			field.gravity_vec = Vector2(0, 1).rotated(global_rotation)
+			#field.gravity_vec = Vector2(0, 1).rotated(global_rotation)
 			
 			var wearFactor = 1.0 - pow(ship.getSystemDamage(key, "wear") / getDamageCapacity("wear"), 2)
 			field.gravity = baseGravity * wearFactor

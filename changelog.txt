@@ -1,0 +1,19 @@
+[0.2.1]
+
+1="* Added wake-up for sleeping rigid bodies when entering gravity fields"
+1.1="* Fixes issue where stationary objects wouldn't respond to gravity"
+
+[0.2.0]
+
+1="* Added Gravity Gun weapon"
+1.1="* Ship-mounted directional gravity emitter"
+1.2="* Pulls objects towards ship within a cone"
+2="* Adjusted equipment prices"
+3="* Updated Gravity Beacon transponder format"
+
+[0.1.0]
+
+1="* Initial release"
+2="* Added Gravity Beacon drone"
+2.1="* Deployable drone that creates localized gravity wells"
+2.2="* Supports attraction and repulsion modes"

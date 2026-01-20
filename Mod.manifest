@@ -13,7 +13,7 @@ credits=["Lurkily - for idea in discord's megathread"]
 
 version_major=0
 version_minor=2
-version_bugfix=0
+version_bugfix=1
 
 [tags]
 
@@ -37,3 +37,4 @@ HEVLIB_DISCORD={"URL":"https://discord.com/channels/426287934870781952/146035761
 manifest_version=2.2
 dependancy_mod_ids=["hev.LIBRARY"]
 manifest_url="https://raw.githubusercontent.com/1-WT-1/GravityTools/refs/heads/main/Mod.manifest"
+changelog_path="changelog.txt"
