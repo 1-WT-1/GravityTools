@@ -1,0 +1,19 @@
+;MOD_ID|wt.GravityTools
+;MOD_NAME|Gravity Tools
+;MOD_ICON|https://raw.githubusercontent.com/1-WT-1/GravityTools/refs/heads/main/icon.png
+;MOD_ZIP_NAME|GravityTools.zip
+
+[center][b]Gravity Tools[/b][/center]
+
+A mod adding gravity manipulation equipment for Delta-V.
+
+[u][b]Features:[/b][/u]
+
+[b]Gravity Beacon Drone[/b]
+[indent]A deployable drone that creates localized gravity wells to attract or repel objects within its radius.[/indent]
+
+[b]Gravity Gun[/b]
+[indent]A high-stress mounted "weapon" that projects a directional gravity field. Pulls objects towards your ship within a cone.[/indent]
+
+[u][b]Credits:[/b][/u]
+[indent]Idea by [b]Lurkily[/b] (from discord megathread)[/indent]

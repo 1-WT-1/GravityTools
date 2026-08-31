@@ -12,8 +12,8 @@ credits=["Lurkily - for idea in discord's megathread"]
 [version]
 
 version_major=0
-version_minor=2
-version_bugfix=1
+version_minor=3
+version_bugfix=0
 
 [tags]
 
@@ -38,3 +38,4 @@ manifest_version=2.2
 dependancy_mod_ids=["hev.LIBRARY"]
 manifest_url="https://raw.githubusercontent.com/1-WT-1/GravityTools/refs/heads/main/Mod.manifest"
 changelog_path="changelog.txt"
+modlet_priority=0

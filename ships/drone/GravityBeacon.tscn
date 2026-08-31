@@ -1,15 +1,40 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ships/drone/ClaimBeacon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GravityTools/ships/drone/GravityBeacon.gd" type="Script" id=2]
 [ext_resource path="res://GravityTools/comms/conversation/GravityBeaconConversation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://weapons/weapons.material" type="Material" id=4]
 [ext_resource path="res://enceladus/Spotlight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://shader/ao-spec-difuse.shader" type="Shader" id=6]
+[ext_resource path="res://lights/distant-proxy.png" type="Texture" id=7]
+[ext_resource path="res://weapons/weapons-n.png" type="Texture" id=8]
+[ext_resource path="res://weapons/weapons-c.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 2100.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 500.0
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 6 )
+shader_param/maskScale = Vector2( 11, 1 )
+shader_param/frames = Vector2( 1, 1 )
+shader_param/paintJobFactor = 0.0
+shader_param/paintJobBrightAdjust = 16.0
+shader_param/maxval = 5.0
+shader_param/sparkBias = 0.0
+shader_param/scale = Vector2( 0.5, 1 )
+shader_param/sparkColor = Vector3( 50, 10, 100 )
+shader_param/coatColor = Plane( 0.02, 0.02, 0.02, 1 )
+shader_param/sparkSpeed = Plane( 0.011, 0.013, 0.017, 0.019 )
+shader_param/ref = 0.4
+shader_param/roughness = 4.0
+shader_param/reflectiveness = 8.0
+shader_param/shine = 1.0
+
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 1
 
 [node name="GravityBeacon" instance=ExtResource( 1 )]
 collision_layer = 4126
@@ -18,6 +43,15 @@ shipName = "DRONE_GRAV"
 aiCuriosityDisance = 2000.0
 dialogTree = NodePath("GravityBeaconConversation")
 max_duration = 60.0
+
+[node name="AI" parent="." index="8"]
+visible = false
+
+[node name="Hud" parent="." index="9"]
+visible = false
+
+[node name="DisableAI" parent="." index="11"]
+visible = false
 
 [node name="GravityBeaconConversation" parent="." index="13" instance=ExtResource( 3 )]
 
@@ -32,6 +66,7 @@ range_layer_max = 0
 range_item_cull_mask = 1
 
 [node name="Repellant" type="Area2D" parent="." index="15"]
+visible = false
 collision_layer = 0
 collision_mask = 17
 monitorable = false
@@ -49,6 +84,7 @@ z_index = -2
 shape = SubResource( 1 )
 
 [node name="Attractor" type="Area2D" parent="." index="16"]
+visible = false
 collision_layer = 0
 collision_mask = 17
 monitorable = false
@@ -65,6 +101,7 @@ z_index = -2
 shape = SubResource( 1 )
 
 [node name="SafetyBuffer" type="Area2D" parent="." index="17"]
+visible = false
 collision_layer = 0
 collision_mask = 17
 monitorable = false
@@ -80,6 +117,91 @@ angular_damp = 0.1
 light_mask = 0
 z_index = -1
 shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="." index="18"]
+visible = false
+material = SubResource( 3 )
+editor_only = true
+texture = ExtResource( 7 )
+energy = 5.0
+range_height = 50.0
+
+[node name="Light2D" type="Light2D" parent="Light2D" index="0"]
+visible = false
+material = SubResource( 3 )
+position = Vector2( 0, 200 )
+editor_only = true
+texture = ExtResource( 7 )
+energy = 5.0
+range_height = 50.0
+
+[node name="Coil1" type="Sprite" parent="." index="19"]
+material = ExtResource( 4 )
+position = Vector2( 0, 3 )
+z_index = -1
+texture = ExtResource( 9 )
+normal_map = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 592, 295.604, 95, 87.506 )
+
+[node name="heat" type="Sprite" parent="Coil1" index="0"]
+material = SubResource( 4 )
+z_index = 1
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 336, 295.604, 95, 87.506 )
+
+[node name="Coil2" type="Sprite" parent="." index="20"]
+material = ExtResource( 4 )
+position = Vector2( -3, 0 )
+rotation = 1.5708
+z_index = -1
+texture = ExtResource( 9 )
+normal_map = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 592, 295.604, 95, 87.506 )
+
+[node name="heat" type="Sprite" parent="Coil2" index="0"]
+material = SubResource( 4 )
+z_index = 1
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 336, 295.604, 95, 87.506 )
+
+[node name="Coil3" type="Sprite" parent="." index="21"]
+material = ExtResource( 4 )
+position = Vector2( 3, 0 )
+rotation = -1.5708
+z_index = -1
+texture = ExtResource( 9 )
+normal_map = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 592, 295.604, 95, 87.506 )
+
+[node name="heat" type="Sprite" parent="Coil3" index="0"]
+material = SubResource( 4 )
+z_index = 1
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 336, 295.604, 95, 87.506 )
+
+[node name="Coil4" type="Sprite" parent="." index="22"]
+material = ExtResource( 4 )
+position = Vector2( 0, -3 )
+rotation = 3.14159
+z_index = -1
+texture = ExtResource( 9 )
+normal_map = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 592, 295.604, 95, 87.506 )
+
+[node name="heat" type="Sprite" parent="Coil4" index="0"]
+material = SubResource( 4 )
+z_index = 1
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 336, 295.604, 95, 87.506 )
+
 
 [editable path="AI"]
 [editable path="reactor"]

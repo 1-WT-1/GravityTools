@@ -34,7 +34,7 @@ const GravityBeaconDock_R = {
 			{
 				"property": "flip",
 				"value": true,
-				"use_stringified_value":false
+				"use_stringified_value": false
 			}
 		]
 	}

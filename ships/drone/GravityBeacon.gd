@@ -3,8 +3,12 @@ extends "res://ships/ship-ctrl.gd"
 onready var attract_area = $Attractor
 onready var repel_area = $Repellant
 onready var safety_area = $SafetyBuffer
+onready var glowSprites = [$Coil1/heat, $Coil2/heat, $Coil3/heat, $Coil4/heat]
 
 var gravity_mode = "off" # off, attract, repel
+
+var glowIntensity = 0.0
+export var glowFadeSpeed = 2.0
 
 func _ready():
 	# Initialize dialogue flag
@@ -24,6 +28,14 @@ export var max_duration = 60.0
 var active_timer = 0.0
 
 func _process(delta):
+	# Coil heating effect
+	var targetGlow = 1.0 if gravity_mode != "off" else 0.0
+	glowIntensity = lerp(glowIntensity, targetGlow, delta * glowFadeSpeed)
+	
+	# Divide by 4 to compensate for additive blending of 4 overlapping sprites
+	for glow in glowSprites:
+		glow.modulate.a = glowIntensity / 4.0
+	
 	if gravity_mode != "off":
 		#Timer logic
 		active_timer -= delta
